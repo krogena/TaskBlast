@@ -1,10 +1,11 @@
-package ru.shcherbakov.weatherapp
+package ru.shcherbakov.weatherapp.presentation
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import ru.shcherbakov.weatherapp.R
 import ru.shcherbakov.weatherapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

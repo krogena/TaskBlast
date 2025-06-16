@@ -12,6 +12,6 @@ import ru.shcherbakov.weatherapp.domain.Fact
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(private val factServide: FactService): ViewModel() {
+class MainViewModel @Inject constructor(private val factService: FactService): ViewModel() {
 
 }

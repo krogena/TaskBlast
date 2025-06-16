@@ -1,6 +1,13 @@
 package ru.shcherbakov.weatherapp.domain
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+
+@Entity(tableName = "facts")
 data class Fact(
+    @PrimaryKey(autoGenerate = true)
+    val id: Int? = null,
     val accessibility: String,
     val activity: String,
     val availability: Double,

@@ -45,6 +45,7 @@ dependencies {
     implementation(libs.retrofit.gson)
 
     implementation(libs.dagger.hilt.android)
+    implementation(libs.androidx.recyclerview)
     ksp(libs.dagger.hilt.compiler)
 
     implementation(libs.okhttp)

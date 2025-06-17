@@ -20,7 +20,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.32999998"
         android:justificationMode="inter_word"
-        android:paddingHorizontal="30dp"
+        android:layout_marginHorizontal="27dp"
+        android:paddingHorizontal="3dp"
+        android:gravity="fill_horizontal"
         />
 
     <com.google.android.material.button.MaterialSplitButton

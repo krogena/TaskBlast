@@ -3,8 +3,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.favourites.FavouritesFragment">
 
 
+    <TextView
+        android:id="@+id/tvFavourites"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="10dp"
+        android:fontFamily="@font/rubik_regular"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        android:text="Favourite tasks"/>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tvListFavourites"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvFavourites"
+        app:layout_constraintStart_toStartOf="@id/tvFavourites"
+        app:layout_constraintEnd_toEndOf="@id/tvFavourites"
+        android:layout_marginTop="5dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,7 @@
 package ru.shcherbakov.weatherapp.domain
 
 class GetFactUseCase(private val factListRepository: FactListRepository) {
-    private fun getFact(factId: Int): Fact?{
-        return factListRepository.getFact(factId)
+    private suspend fun getFact(): Fact {
+        return factListRepository.getFact()
     }
 }

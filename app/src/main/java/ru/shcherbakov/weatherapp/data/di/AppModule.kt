@@ -13,15 +13,28 @@ import ru.shcherbakov.weatherapp.domain.Fact.Companion.BASE_URL
 import javax.inject.Singleton
 
 
+/**
+ * Модуль Dagger Hilt для предоставления зависимостей уровня приложения.
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
+
+    // Предоставляет базовый URL для API.
     @Provides
     fun baseUrl() = BASE_URL
+
+
+    // Создает и настраивает HTTP-логгер для отладки сетевых запросов.
+    // Устанавливает уровень логирования BODY для вывода тел запросов и ответов.
     @Provides
     fun logging() = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+
+    // Создает и настраивает OkHttpClient с добавленным логгером.
     @Provides
     fun okHttpClient() = OkHttpClient.Builder().addInterceptor(logging()).build()
+
+    // Предоставляет Retrofit-клиент как синглтон для работы с API.
     @Provides
     @Singleton
     fun provideRetrofit(baseUrl: String): FactService = Retrofit.Builder()

@@ -21,15 +21,15 @@ class FactAdapter: RecyclerView.Adapter<FactAdapter.FactViewHolder>() {
 
     // Создаем callback для сравнения элементов списка
     private val callback = object: DiffUtil.ItemCallback<Fact>() {
-        // Проверяем, одинаковые ли это элементы (по уникальному идентификатору)
+        // Проверяем, одинаковы ли элементы
         override fun areItemsTheSame(oldItem: Fact, newItem: Fact): Boolean {
-            // Сравниваем по полю link (предполагается, что оно уникально)
+            // Сравниваем по полю link
             return oldItem.link == newItem.link
         }
 
         // Проверяем, одинаково ли содержимое элементов
         override fun areContentsTheSame(oldItem: Fact, newItem: Fact): Boolean {
-            // Сравниваем все поля (требует, чтобы data class Fact реализовывал equals())
+            // Сравниваем все поля
             return oldItem == newItem
         }
     }

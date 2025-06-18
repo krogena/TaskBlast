@@ -9,7 +9,7 @@ interface FactListRepository {
 
     fun deleteFact(fact: Fact)
 
-    fun getFact(factId: Int): Fact?
+    suspend fun getFact(): Fact
 
     fun getFactList(): LiveData<List<Fact>>
 }

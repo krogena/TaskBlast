@@ -21,40 +21,15 @@ class FactListRepositoryImpl @Inject constructor(private val factService: FactSe
         // Реализация удаления факта
     }
 
-    override fun getFact(factId: Int): Fact? {
-        return factList.find { it.key.toInt() == factId}
-    }
+    override suspend fun getFact(): Fact = factService.getRandom()
 
     override fun getFactList(): LiveData<List<Fact>> {
         return factListLD
     }
 
-    suspend fun loadRandomFact() {
-        try {
-            val fact = withContext(Dispatchers.IO) {
-                factService.getRandom()
-            }
-            factList.add(fact)
-            updateLiveData()
-        } catch (e: Exception) {
-            // Обработка ошибок (например, логирование или уведомление UI)
-            e.printStackTrace()
-        }
-    }
 
-    suspend fun loadFilteredFacts(type: String, participants: Int) {
-        try {
-            val facts = withContext(Dispatchers.IO) {
-                factService.getFiltered(type, participants)
-            }
-            factList.clear()
-            factList.addAll(facts)
-            updateLiveData()
-        } catch (e: Exception) {
-            // Обработка ошибок
-            e.printStackTrace()
-        }
-    }
+
+
     private fun updateLiveData() {
         factListLD.postValue(factList.toList())
     }

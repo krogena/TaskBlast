@@ -15,7 +15,6 @@ class FactAdapter: RecyclerView.Adapter<FactAdapter.FactViewHolder>() {
 
     // Внутренний класс ViewHolder, который хранит ссылки на View элементы
     inner class FactViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        // Находим TextView в макете элемента списка
         var tvItemFavourites: TextView = itemView.findViewById(R.id.tvItemFavourites)
     }
 
@@ -23,13 +22,11 @@ class FactAdapter: RecyclerView.Adapter<FactAdapter.FactViewHolder>() {
     private val callback = object: DiffUtil.ItemCallback<Fact>() {
         // Проверяем, одинаковы ли элементы
         override fun areItemsTheSame(oldItem: Fact, newItem: Fact): Boolean {
-            // Сравниваем по полю link
-            return oldItem.link == newItem.link
+            return oldItem.key == newItem.key
         }
 
         // Проверяем, одинаково ли содержимое элементов
         override fun areContentsTheSame(oldItem: Fact, newItem: Fact): Boolean {
-            // Сравниваем все поля
             return oldItem == newItem
         }
     }
@@ -53,7 +50,6 @@ class FactAdapter: RecyclerView.Adapter<FactAdapter.FactViewHolder>() {
 
         // Устанавливаем данные в View элементы
         holder.apply {
-            // Устанавливаем текст в TextView
             tvItemFavourites.text = fact.activity
         }
     }

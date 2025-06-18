@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 class FactListRepositoryImpl @Inject constructor(private val factService: FactService): FactListRepository {
 
-    private val factListLD = MutableLiveData<List<Fact>>()
+    private var factListLD = MutableLiveData<List<Fact>>()
     private val factList = mutableListOf<Fact>()
 
     override fun addFact(fact: Fact) {
@@ -23,7 +23,15 @@ class FactListRepositoryImpl @Inject constructor(private val factService: FactSe
 
     override suspend fun getFact(): Fact = factService.getRandom()
 
-    override fun getFactList(): LiveData<List<Fact>> {
+    override suspend fun getFactList(type: String, participants: Int): LiveData<List<Fact>> {
+        try {
+            val newFacts = factService.getFiltered(type, participants)
+            factList.clear()
+            factList.addAll(newFacts)
+            updateLiveData()
+        } catch (e: Exception) {
+            factListLD.postValue(emptyList())
+        }
         return factListLD
     }
 

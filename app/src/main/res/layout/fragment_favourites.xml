@@ -19,7 +19,7 @@
         android:fontFamily="@font/rubik_regular"
         android:textSize="30sp"
         android:textColor="@color/black"
-        android:text="Favourite tasks"/>
+        android:text="@string/title_favourite"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/tvListFavourites"

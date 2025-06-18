@@ -40,7 +40,7 @@
             style="?attr/materialSplitButtonLeadingFilledTonalStyle"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:text="Get a task"
+            android:text="@string/button_get_activity"
             android:fontFamily="@font/rubik_regular"
             android:textStyle="bold" />
 

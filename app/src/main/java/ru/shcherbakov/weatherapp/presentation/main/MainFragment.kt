@@ -33,11 +33,15 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.factLiveData.observe(viewLifecycleOwner){ fact ->
             when (fact){
-                is Resource.Error -> TODO()
-                is Resource.Loading -> TODO()
+                is Resource.Error -> mBinding.tvRandomFact.text = "Error: ${fact.message}"
+                is Resource.Loading -> mBinding.tvRandomFact.text = "Loading..."
                 is Resource.Success -> mBinding.tvRandomFact.text = fact.data?.activity
+            }
+            mBinding.getTaskButton.setOnClickListener {
+                viewModel.getFact() // Запрашиваем новый факт
             }
 
         }
+
     }
 }

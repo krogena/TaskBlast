@@ -20,7 +20,7 @@ class MainViewModel @Inject constructor(private val repository: FactListReposito
         getFact()
     }
 
-    private fun getFact() =
+    fun getFact() =
         viewModelScope.launch {
             factLiveData.postValue(Resource.Loading())
             try {

@@ -1,56 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.main.MainFragment">
 
     <TextView
         android:id="@+id/tvRandomFact"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
         android:fontFamily="@font/rubic"
-        android:text="Look at your finances and find one way to save money"
         android:textColor="@color/purple"
         android:textSize="54sp"
+        android:gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.32999998"
-        android:justificationMode="inter_word"
-        android:layout_marginHorizontal="27dp"
-        android:paddingHorizontal="3dp"
-        android:gravity="fill_horizontal"
-        />
+        app:layout_constraintVertical_bias="0.32999998" />
 
     <com.google.android.material.button.MaterialSplitButton
         android:id="@+id/splitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="212dp"
+        android:layout_marginBottom="130dp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:gravity="center">
+        app:layout_constraintStart_toStartOf="parent">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/getTaskButton"
             style="?attr/materialSplitButtonLeadingFilledTonalStyle"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:text="@string/button_get_activity"
             android:fontFamily="@font/rubik_regular"
+            android:text="@string/button_get_activity"
             android:textStyle="bold" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/addTaskButton"
             style="?attr/materialSplitButtonIconFilledTonalStyle"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            app:icon="@drawable/ic_add"
-            />
+            app:icon="@drawable/ic_add" />
     </com.google.android.material.button.MaterialSplitButton>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

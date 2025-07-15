@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import ru.shcherbakov.weatherapp.data.db.FactDao
 import ru.shcherbakov.weatherapp.domain.Fact
 import ru.shcherbakov.weatherapp.domain.FactListRepository
 import javax.inject.Inject
@@ -35,8 +36,9 @@ class FactListRepositoryImpl @Inject constructor(private val factService: FactSe
         return factListLD
     }
 
-
-
+//    suspend fun getFavouriteFacts() = factDao.getAllFacts()
+//    suspend fun addToFavourites(fact: Fact) = factDao.insert(fact = fact)
+//    suspend fun deleteFromFavourites(fact: Fact) = factDao.delete(fact = fact)
 
     private fun updateLiveData() {
         factListLD.postValue(factList.toList())

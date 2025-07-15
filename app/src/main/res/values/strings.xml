@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">WeatherApp</string>
     <string name="title_favourite">Favourite activities</string>
-    <string name="button_get_activity">Get activity</string>
+    <string name="button_get_activity">Find a task</string>
 </resources>

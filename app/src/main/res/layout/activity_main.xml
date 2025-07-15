@@ -25,7 +25,15 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav_menu"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="69dp"
+        app:itemGravity="center"
+        app:itemIconTint="@null"
+        app:itemRippleColor="@null"
+        app:itemBackground="@null"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconSize="24dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">

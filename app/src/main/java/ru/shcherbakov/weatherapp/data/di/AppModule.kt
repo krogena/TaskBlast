@@ -1,5 +1,7 @@
 package ru.shcherbakov.weatherapp.data.di
 
+import android.content.Context
+import androidx.room.Room
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -43,4 +45,19 @@ object AppModule {
         .client(okHttpClient())
         .build()
         .create(FactService::class.java)
+
+//    @Provides
+//    @Singleton
+//    fun provideFactDatabase(@ApplicationContext context: Context){
+//        Room.databaseBuilder(
+//            context,
+//            FactDatabase::class.java,
+//            "factDatabase"
+//        ).build()
+//    }
+
+//    @Provides
+//    fun provideFactDao(appDatabase: FactDatabase): FactDao{
+//        return appDatabase.getFactDao()
+//    }
 }
